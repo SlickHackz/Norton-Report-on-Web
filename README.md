@@ -5,6 +5,5 @@ I have implemented a mechanism to display the Norton Security product's health i
 
 Here are the before and after pictures 
 
-![Alt text](/SafeSeachHomePage/Norton-Report-on-Web.jpg?raw=true "AFTER_Norton-Report-on-Web")
-
-![Alt text](/SafeSeachHomePage/Norton-Web.jpg?raw=true "BEFORE_Norton-Web")
+![ScreenShot](https://raw.github.com/SlickHackz/Norton-Report-on-Web/SafeSeachHomePage/Norton-Report-on-Web.jpg)
+![ScreenShot](https://raw.github.com/SlickHackz/Norton-Report-on-Web/SafeSeachHomePage/Norton-Web.jpg)
