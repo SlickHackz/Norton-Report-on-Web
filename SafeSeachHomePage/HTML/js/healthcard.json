@@ -1,0 +1,1 @@
+healthcarddetails = '[		{		"report" : "LiveUpdate",		"value" : "Up-to-date"	},		{		"report" : "Backup",		"value" : "Never run"	},		{		"report" : "HealthMessage",		"value" : "Your computer is protected!"	},		{		"report" : "ProductHealth",		"value" : "7"	}]'

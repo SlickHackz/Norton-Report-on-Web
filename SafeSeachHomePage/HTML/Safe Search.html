@@ -1,0 +1,392 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Norton has teamed up with Ask.com to provide you with a safer search experience! Conveniently available and always on, Norton Safe Search is a search environment developed with a focus on online safety. The primary purpose of Norton Safe Search is to ensure that the sites you visit are safe."/>
+<meta property="og:url" content="http://search.norton.com"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Norton Safe Search"/>
+<meta property="og:description" content="Norton has teamed up with Ask.com to provide you with a safer search experience! Conveniently available and always on, Norton Safe Search is a search environment developed with a focus on online safety. The primary purpose of Norton Safe Search is to ensure that the sites you visit are safe."/>
+<meta property="og:image" content="http://search.norton.com/img/facebook_safesearch.jpg"/>
+<meta name="google-site-verification" content="tLEUjLgYPrOi8y7doQUCkpnWYJVsPFOWV2Zq4PaGbio"/>
+	<title>Safe Search</title>
+<link rel="shortcut icon" href="img/logoicon.ico"/>
+<link rel="stylesheet" href="css/home-7833796bf32621732a75c4b111c39edc.css">
+<link rel="stylesheet" href="js/jquery/jquery-ui.min.css">
+<link href="css/style.css" rel="stylesheet" type="text/css">  
+
+<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="css/animate.css" rel="stylesheet" type="text/css">
+<link href="owl.carousel.2.1.0/assets/owl.carousel.min.css" rel="stylesheet" />
+
+<script src="js/jquery-1.12.4.js"></script>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script src="owl.carousel.2.1.0/owl.carousel.min.js"></script>
+<script type="text/javascript" src="js/reportcard.json"></script> 
+<script type="text/javascript" src="js/healthcard.json"></script> 
+<!-- <script type="text/javascript" src="js/Test.json"></script> -->
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+<script type="text/javascript" src="js/jquery.counterup.min.js"></script>
+<!-- <script type="text/javascript" src="js/sechis.json"></script>
+<script type="text" src="js/fero.txt"></script> -->
+
+<!--[if lt IE 9]><script src="js/respond.min.js"></script><![endif]-->
+</head>
+
+<body onload="loadJson()">
+
+	<!--<div id="mySidenav" class="sidenav">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<a href href="https://www.amazon.com" target="_blank"><img src="images/amazonicon.jpg"></a>
+		<a href="https://www.gmail.com" target="_blank"><img src="images/gmailicon.jpg"></a>
+		<a href="https://www.facebook.com" target="_blank"><img src="images/facebookicon.jpg"></a>
+		<a href="https://www.youtube.com" target="_blank"><img src="images/youtubeicon.jpg"></a>
+		<a href="https://mail.yahoo.com" target="_blank"><img src="images/yahooicon.jpg"></a>
+		<a href="https://www.twitter.com" target="_blank"><img src="images/twittericon.jpg"></a>
+	</div>
+	<span id="side-quick-links-font" onclick="openNav()">Quick Links</span> -->
+	
+    <div class="quick-links-modified">
+        <a class="sprite am" title="Amazon"
+            href="https://www.amazon.com" target="_blank"></a>
+        <a class="sprite gm" title="Gmail"
+            href="https://www.gmail.com" target="_blank"></a>
+        <a class="sprite fb" title="Facebook"
+            href="https://www.facebook.com" target="_blank"></a>
+        <a class="sprite yt" title="YouTube"
+            href="https://www.youtube.com" target="_blank"></a>
+        <a class="sprite yh" title="Yahoo Mail"
+            href="https://mail.yahoo.com" target="_blank"></a>
+        <a class="sprite tw" title="Twitter"
+            href="https://www.twitter.com" target="_blank"></a>
+    </div>
+
+	<input id="lang-id" value="en_US" type="hidden"/>
+	<input id="is-threat-page" value="" type="hidden"/>
+	<noscript class="no-script"> Javascript is required for this site to work properly </noscript>
+	
+
+
+	<div class="norton-search-bar-view">
+		<div class="top-text">
+			<span class="top-text-font norton-text">Norton</span>
+			<span class="top-text-font safe-search-text">Safe Search</span>
+		</div>
+		<div class="search-bar">
+			<form id="search-bar-form" name="form" method="post" action="">
+				<div class="search-box-container">
+				<div class="norton-tick"></div>
+				<input id="search-text" type="text" name="focus" autofocus="autofocus" required class="search-bar-search-box ui-autocomplete-input" onkeypress="searchKeyPress(event);" autocomplete="off">
+				<button class="search-bar-close-icon" type="reset" onclick="focusSearchBox();">x</button>
+				</div>
+				<input id="search-bar-button-id" type="button" value="" class="search-bar-button sprite-bg"/>
+			</form>
+		</div>
+	</div> <!-- end of norton-search-bar-view division -->
+	
+	<div class="norton-status-cards-view">
+	
+			<div class="norton-card" >
+				<div class="norton-card-container">
+				<h4 class="safe-search-text"><b>Threats Detected</b></h4>
+				</div>
+				<span class="counter safe-search-text" id="threatsdetectedcard"></span>
+			</div>
+			
+			<div class="norton-card" >
+				<div class="norton-card-container">
+				<h4 class="safe-search-text"><b>Product Health</b></h4>
+				</div>
+				<span class="safe-search-text" id="healthmessagecard"></span>
+			</div>			
+			
+			<div class="norton-card" >
+				<div class="norton-card-container">
+				<h4 class="safe-search-text"><b>Definitions Status</b></h4>
+				</div>
+				<span class="safe-search-text" id="liveupdatecard"></span>
+			</div>			
+			
+			<div class="norton-card" >
+				<div class="norton-card-container">
+				<h4 class="safe-search-text"><b>Backup Status</b></h4>
+				</div>
+				<!-- <span class="counter safe-search-text" id="backupcard"></span><span class="safe-search-text" style="font-size:25px"></span> -->
+				<span class="safe-search-text" id="backupcard"></span>
+			</div>	
+			
+ 			<script>
+				function counter() {
+				console.log("running");
+				$('.counter').counterUp({
+					delay: 10,
+					time: 1000
+				});
+				};
+			</script>
+		
+		<!-- </div>  --> <!-- end of norton-status-titles division -->
+	</div> <!-- end of norton-status-cards-view --> 
+	
+	<div class="carousel-view" >
+            <div class="horizontal-line-top"></div>
+            <div class="horizontal-line-bottom"></div>
+            <div class="vertical-line vline-0"></div>
+            <div class="vertical-line vline-1"></div>
+            <div class="vertical-line vline-2"></div>
+            <div class="vertical-line vline-3"></div>
+            <div class="vertical-line vline-4"></div>
+            <div class="vertical-line vline-5"></div>
+			<div id="single-element-owl" class="owl-carousel">
+				<div class="fit-image-owl">
+                    <span class="carousel-item-header">Total Files Scanned</span>
+                    <span id="filesscannedandsecured" class="carousel-item-content"><p id="report-card-value">N/A</p></span>
+                </div>
+				<div class="fit-image-owl">
+                    <span class="carousel-item-header">Total Downloads Analyzed</span>
+                    <span id="downloadsanalyzed" class="carousel-item-content"><p id="report-card-value">N/A</p></span>
+                </div>
+				<div class="fit-image-owl">
+                    <span class="carousel-item-header">Total Items Quarantined</span>
+                    <span id="itemsquarantined" class="carousel-item-content"><p id="report-card-value">N/A</p></span>
+                </div>
+				<div class="fit-image-owl">
+                    <span class="carousel-item-header">Total Quick Scans</span>
+                    <span id="quickscans" class="carousel-item-content"><p id="report-card-value">N/A</p></span>
+                </div>
+				<div class="fit-image-owl">
+                    <span class="carousel-item-header">Total File Cleanups</span>
+                    <span id="filecleanups" class="carousel-item-content"><p id="report-card-value">N/A</p></span>
+                </div>
+				<div class="fit-image-owl">
+                    <span class="carousel-item-header">Total Space Cleared</span>
+                    <span id="spacecleared" class="carousel-item-content extra-space"><p id="report-card-value">N/A</p></span>
+                </div>
+				<div class="fit-image-owl">
+                    <span class="carousel-item-header">Total Wireless HotSpots Protected</span>
+                    <span id="wirelesshotspotsprotected" class="carousel-item-content"><p id="report-card-value">N/A</p></span><!--  Wireless hotspots protected -->
+                </div>
+				<div class="fit-image-owl">
+                    <span class="carousel-item-header">Total Wired Networks Protected</span>
+                    <span id="wirednetworksprotected" class="carousel-item-content"><p id="report-card-value">N/A</p></span>
+                </div>
+				<div class="fit-image-owl">
+                    <span class="carousel-item-header">Total Firewall Activities Monitored</span>
+                    <span id="firewallactivitiesmonitored" class="carousel-item-content"><p id="report-card-value">N/A</p></span>
+                </div>
+				<div class="fit-image-owl">
+                    <span class="carousel-item-header">Total Performance Alerts</span>
+                    <span id="performancealerts" class="carousel-item-content"><p id="report-card-value">N/A</p></span>
+                </div>
+				<div class="fit-image-owl">
+                    <span class="carousel-item-header">Total File Rep Monitored</span>
+                    <span id="filereputationsmonitored" class="carousel-item-content"><p id="report-card-value">N/A</p></span>
+                </div>
+				<div class="fit-image-owl">
+                    <span class="carousel-item-header">Total Temp Files removed</span>
+                    <span id="tempfilesremoved" class="carousel-item-content"><p id="report-card-value">N/A</p></span>
+                </div>
+			</div>
+		   <script>
+					var owl = $('.owl-carousel');
+					owl.owlCarousel({
+						items:5,
+						loop:true,
+						margin:0,
+						autoplay:true,
+						autoplayTimeout:4000,
+						autoplayHoverPause:true,
+                        nav: true,
+                        navText: ["<img src='images/arrow_left.png' />", "<img src='images/arrow_right.png' />"]
+					});
+
+					$('.play').on('click',function(){
+						owl.trigger('play.owl.autoplay',[1000])
+					})
+					$('.stop').on('click',function(){
+						owl.trigger('stop.owl.autoplay')
+					})
+			</script>
+		</div> <!-- end of carousel-view division-->
+
+	<div class="footer-privacy">
+	<a class="footer-font" href="http://www.symantec.com/about/profile/privacypolicy/" target="_blank">Privacy</a>
+	</div>
+	
+</body>
+
+</html>
+
+<script type="text/javascript" src="js/jquery/external/jquery/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/jquery/jquery-ui.min.js" ></script>
+<script type="text/javascript" src="js/home-1b74ddf1deb3a2bbe2c791db21dee643.js" ></script>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+<script type="text/javascript" src="js/jquery.counterup.min.js"></script>
+
+<script type="text/javascript">
+	window.addEventListener("load", function () {
+	console.log("running");
+				$('.counter').counterUp({
+					delay: 10,
+					time: 1000
+				});
+	});
+</script>
+
+
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+		console.log("Hello");
+		
+
+		
+		try{
+			console.log(healthcarddetails);
+			var hcarddtlsJS = JSON.parse(healthcarddetails);
+			
+			for(i=0 ; i<=hcarddtlsJS.length-1 ; i++)
+			{
+			
+				switch(hcarddtlsJS[i].report.trim())
+				{
+					case "ProductHealth":
+					{
+						console.log("Inside ThreatsResolved case!");
+						console.log(hcarddtlsJS[i].value.trim());
+						$('body .norton-status-cards-view .norton-card #threatsdetectedcard').text(hcarddtlsJS[i].value.trim());
+						//$('body .norton-status-cards-view .norton-card #threatsdetectedcard').append('<span class="counter safe-search-text" id="threatsdetectedcard">'+hcarddtlsJS[i].value.trim()+'</span>');
+						$('body .norton-status-cards-view .norton-card #threatsdetectedcard').css('color','skyblue');
+						break;
+					}
+					case "HealthMessage":
+					{
+						//console.log("Inside HealthMessage case!");
+						
+						if(hcarddtlsJS[i].value.trim()=="Your computer is protected!")
+						{
+							//console.log("Yes about to write portected in green color");
+							$('body .norton-status-cards-view .norton-card #healthmessagecard').html('Protected!');
+							$('body .norton-status-cards-view .norton-card #healthmessagecard').css('color','green');
+						}
+						else if(hcarddtlsJS[i].value.trim()=="Your computer needs attention!")
+						{
+							//console.log("Yes about to write attention fix now in orange color");
+							$('body .norton-status-cards-view .norton-card #healthmessagecard').html('Attention!');
+							$('body .norton-status-cards-view .norton-card #healthmessagecard').append('<div class="safe-search-text" id="fixnowmsg">Fix Now</div>');
+							$('body .norton-status-cards-view .norton-card #healthmessagecard').css('color','orange');						
+						}
+						else if(hcarddtlsJS[i].value.trim()=="Your computer is at risk!")
+						{
+							//console.log("Yes about to write attention fix now in orange color");
+							$('body .norton-status-cards-view .norton-card #healthmessagecard').html('At Risk!');
+							$('body .norton-status-cards-view .norton-card #healthmessagecard').append('<div class="safe-search-text" id="fixnowmsg">Fix Now</div>');
+							$('body .norton-status-cards-view .norton-card #healthmessagecard').css('color','red');						
+						}						
+						
+						break;
+					}
+					case "LiveUpdate":
+					{
+						//console.log("Inside LiveUpdate case!");
+						
+						if(hcarddtlsJS[i].value.trim()=="Up-to-date")
+						{
+							//console.log("Yes about to write Up-to-date in green color");
+							$('body .norton-status-cards-view .norton-card #liveupdatecard').html('Up-to-Date!');
+							$('body .norton-status-cards-view .norton-card #liveupdatecard').css('color','green');
+						}
+						else
+						{
+							//console.log("Yes about to write Out-of-date in red color");
+							$('body .norton-status-cards-view .norton-card #liveupdatecard').html('Out-Dated!');
+							$('body .norton-status-cards-view .norton-card #liveupdatecard').append('<div class="safe-search-text" id="fixnowmsg">Fix Now</div>');
+							$('body .norton-status-cards-view .norton-card #liveupdatecard').css('color','red');						
+						}	
+						
+						break;
+					}
+					case "Backup":
+					{
+						//console.log("Inside Backup case!");
+						
+						if(hcarddtlsJS[i].value.trim()=="Up-to-date")
+						{
+							//console.log("Yes about to write Up-to-date in green color");
+							$('body .norton-status-cards-view .norton-card #backupcard').html('Up-to-date!');
+							$('body .norton-status-cards-view .norton-card #backupcard').css('color','green');
+						}
+						else
+						{
+							//console.log("Yes about to write never run  in orange color");
+							$('body .norton-status-cards-view .norton-card #backupcard').html('Never Run!');
+							$('body .norton-status-cards-view .norton-card #backupcard').css('color','orange');						
+						}							
+						break;
+					}					
+				};
+				
+				//console.log(hcarddtlsJS[i].report + " " + hcarddtlsJS[i].value);
+				var reportValStrtoID = hcarddtlsJS[i].report.toLowerCase().trim().replace(/\s+/g,'');
+				hcarddtlsJS[i].report = reportValStrtoID;
+				//console.log("KEY : "+hcarddtlsJS[i].report + " VALUE : " + hcarddtlsJS[i].value);				
+				
+				
+			}
+			
+			
+		}
+		catch(excptG)
+		{
+			console.log("During Cards (Health card) JSON parsing, an Exception has occured. Details : "+excptG);
+			console.log("Hiding Cards!");
+			
+		}
+		
+		try{
+			//console.log(reportcard30days);
+			var rcard30dJS = JSON.parse(reportcard30days);
+		}
+		catch(excptG)
+		{
+			console.log("During Carousel (Report card) JSON parsing, an Exception has occured. Details : "+excptG);
+			console.log("Hiding Carousel!");
+			$('.owl-carousel').hide();
+			$('.owl-nav .owl-prev').hide();
+			$('.owl-nav .owl-next').hide();
+			return;
+		}		
+		
+		var unitsarr;
+		for(i=0 ; i<=rcard30dJS.length-1 ; i++)
+		{
+			//console.log(rcard30dJS[i].report + " "  + rcard30dJS[i].value);
+			var reportValStrtoID = rcard30dJS[i].report.toLowerCase().trim().replace(/\s+/g,'');
+			rcard30dJS[i].report = reportValStrtoID;
+			
+			<!-- $('.owl-item #'+reportValStrtoID+' p').html(rcard30dJS[i].value.trim()); -->
+			
+			
+			if(rcard30dJS[i].value.includes("MB") || rcard30dJS[i].value.includes("GB") || rcard30dJS[i].value.includes("KB"))
+			{
+				console.log(rcard30dJS[i].value.split(" "));
+				unitsarr = rcard30dJS[i].value.split(" ");
+				rcard30dJS[i].value = unitsarr[0];
+				console.log(rcard30dJS[i].value);
+				$('.owl-item #'+reportValStrtoID+' p').html(rcard30dJS[i].value.trim()+'<br/>'+unitsarr[1]);
+			}
+			else
+			{
+				$('.owl-item #'+reportValStrtoID+' p').html(rcard30dJS[i].value.trim());
+			}
+			//console.log("KEY : "+rcard30dJS[i].report + " VALUE + "  + rcard30dJS[i].value);
+		}	
+		
+		
+
+		
+	});
+
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+</script>
